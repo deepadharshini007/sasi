@@ -589,38 +589,68 @@ body{
         font-size:2.2rem;
     }
 
+    /* FILM STRIP */
+
     .film-strip{
-        gap:25px;
-        padding:0 30px;
+
+        gap:18px;
+
+        padding:0 20px;
+
+        height:300px;
+
+        /* MOBILE SPEED */
+        animation:slideFilmMobile 18s linear infinite;
     }
 
+    /* MORE PHOTOS VISIBLE */
+
     .frame{
-        min-width:200px;
-        height:260px;
+
+        min-width:150px;
+
+        height:220px;
     }
 
     .paper{
-        padding:50px 25px;
+        padding:45px 22px;
     }
 
     .paper-title{
-        font-size:2.8rem;
+        font-size:2.4rem;
     }
 
     .paper-text{
-        font-size:1.2rem;
+
+        font-size:1.1rem;
+
+        line-height:1.4;
     }
 
     .sign{
-        font-size:1.8rem;
+        font-size:1.7rem;
     }
 
     .final-text{
-        font-size:1.5rem;
+
+        font-size:1.4rem;
+
         padding:0 20px;
     }
 }
 
+/* MOBILE FILM SPEED */
+
+@keyframes slideFilmMobile{
+
+    from{
+        transform:translate(-5%,-50%);
+    }
+
+    to{
+        transform:translate(-78%,-50%);
+    }
+}
 </style>
 </head>
 
