@@ -6,6 +6,7 @@
 
 <title>Accept My Gift 🤎</title>
 
+<!-- VINTAGE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
@@ -16,7 +17,8 @@
     box-sizing:border-box;
 }
 
-    
+/* BODY */
+
 body{
 
     height:100vh;
@@ -37,7 +39,7 @@ body{
     font-family:'Caveat',cursive;
 }
 
-/* GRAIN */
+/* VINTAGE GRAIN */
 
 body::before{
 
@@ -83,7 +85,7 @@ body::before{
     }
 }
 
-/* DUST */
+/* FLOATING DUST */
 
 .dust{
 
@@ -110,7 +112,7 @@ body::before{
     }
 }
 
-/* CARD */
+/* MAIN CARD */
 
 .container{
 
@@ -124,7 +126,7 @@ body::before{
 
     border-radius:35px;
 
-    padding:45px 30px;
+    padding:45px 35px;
 
     text-align:center;
 
@@ -151,22 +153,51 @@ body::before{
     }
 }
 
+/* IMAGE */
+
+.doll{
+
+    width:240px;
+
+    margin-bottom:25px;
+
+    animation:float 3s infinite ease-in-out;
+
+    filter:
+    drop-shadow(0 0 25px rgba(255,220,170,0.2));
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
 /* TITLE */
 
 h1{
 
     color:#f8e7c9;
 
-    font-size:2rem;
+    font-size:2.1rem;
 
     margin-bottom:15px;
 
     font-family:'Special Elite',cursive;
 
-    letter-spacing:2px;
-
     text-shadow:
     0 0 10px rgba(255,220,170,0.2);
+
+    letter-spacing:2px;
 }
 
 /* TEXT */
@@ -175,11 +206,11 @@ p{
 
     color:#e7d7c2;
 
-    font-size:1.4rem;
+    font-size:1.5rem;
+
+    margin-bottom:40px;
 
     line-height:1.5;
-
-    margin-bottom:45px;
 }
 
 /* BUTTON AREA */
@@ -189,33 +220,37 @@ p{
     position:relative;
 
     width:100%;
-    height:140px;
+    height:110px;
 }
 
-/* BUTTONS */
+/* COMMON BUTTON */
 
 button{
 
     border:none;
 
-    padding:15px 34px;
+    padding:16px 38px;
 
     border-radius:50px;
 
     color:#fff7ed;
 
-    font-size:1rem;
+    font-size:1.1rem;
 
     font-family:'Special Elite',cursive;
 
     cursor:pointer;
 
     transition:0.3s;
+
+    position:absolute;
 }
 
-/* YES */
+/* YES BUTTON */
 
 .yes-btn{
+
+    left:10px;
 
     background:
     linear-gradient(
@@ -227,14 +262,16 @@ button{
     0 0 20px rgba(0,0,0,0.4);
 }
 
-/* NO */
+.yes-btn:hover{
+
+    transform:scale(1.08);
+}
+
+/* NO BUTTON */
 
 .no-btn{
 
-    position:absolute;
-
-    top:0;
-    right:0;
+    right:10px;
 
     background:
     linear-gradient(
@@ -246,73 +283,24 @@ button{
     0 0 20px rgba(0,0,0,0.4);
 }
 
-/* HOVER */
-
-button:hover{
-
-    transform:scale(1.08);
-}
-
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:500px){
 
     .container{
+        width:90%;
+    }
 
-        width:92%;
-
-        padding:35px 20px;
-
-        border-radius:28px;
+    .doll{
+        width:190px;
     }
 
     h1{
-
-        font-size:1.45rem;
-
-        line-height:1.5;
+        font-size:1.7rem;
     }
 
     p{
-
-        font-size:1.1rem;
-
-        margin-bottom:35px;
-    }
-
-    .buttons{
-
-        height:180px;
-
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-
-        gap:25px;
-    }
-
-    .yes-btn{
-
-        position:relative;
-    }
-
-    .no-btn{
-
-        position:relative;
-
-        top:auto;
-        right:auto;
-        left:auto;
-    }
-
-    button{
-
-        width:180px;
-
-        font-size:0.95rem;
-
-        padding:14px 20px;
+        font-size:1.2rem;
     }
 }
 
@@ -365,9 +353,16 @@ for(let i=0;i<60;i++){
 
 </script>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 
 <div class="container">
+
+    <!-- IMAGE
+
+    <img src="doll.png"
+    class="doll"> -->
+
+    <!-- TITLE -->
 
     <h1>
 
@@ -375,11 +370,15 @@ for(let i=0;i<60;i++){
 
     </h1>
 
+    <!-- SUBTEXT -->
+
     <p>
 
         I made something special only for you ✨
 
     </p>
+
+    <!-- BUTTONS -->
 
     <div class="buttons">
 
@@ -395,8 +394,7 @@ for(let i=0;i<60;i++){
         <!-- NO -->
 
         <button class="no-btn"
-        id="noBtn"
-        onclick="showMessage()">
+        id="noBtn">
 
             NO 🙈
 
@@ -417,37 +415,26 @@ function acceptGift(){
     window.location.href="boxes.html";
 }
 
-/* NO BUTTON */
-
-function showMessage(){
-
-    alert("Go and click YES idiot 😭🤎");
-}
-
-/* RUNAWAY BUTTON ONLY DESKTOP */
+/* RUNAWAY BUTTON */
 
 const noBtn =
 document.getElementById("noBtn");
 
-if(window.innerWidth > 600){
+noBtn.addEventListener("mouseover",()=>{
 
-    noBtn.addEventListener("mouseover",()=>{
+    const x =
+    Math.random()*230;
 
-        const x =
-        Math.random()*220;
+    const y =
+    Math.random()*70;
 
-        const y =
-        Math.random()*90;
+    noBtn.style.left = x+"px";
 
-        noBtn.style.left = x+"px";
-
-        noBtn.style.top = y+"px";
-    });
-}
+    noBtn.style.top = y+"px";
+});
 
 </script>
-
-<!-- HEART STYLE -->
+<!-- HEART BUBBLES STYLE -->
 
 <style>
 
@@ -470,6 +457,8 @@ if(window.innerWidth > 600){
     filter:
     drop-shadow(0 0 10px rgba(255,220,170,0.4));
 }
+
+/* FLOATING EFFECT */
 
 @keyframes heartBubble{
 
@@ -508,7 +497,8 @@ if(window.innerWidth > 600){
 
 </style>
 
-<!-- HEART SCRIPT -->
+
+<!-- HEART BUBBLES SCRIPT -->
 
 <script>
 
@@ -521,16 +511,24 @@ setInterval(()=>{
 
     heart.innerHTML = "🤎";
 
+    /* RANDOM POSITION */
+
     heart.style.left =
     Math.random()*100 + "vw";
 
+    /* RANDOM SIZE */
+
     heart.style.fontSize =
     (Math.random()*25 + 15) + "px";
+
+    /* RANDOM SPEED */
 
     heart.style.animationDuration =
     (Math.random()*4 + 4) + "s";
 
     document.body.appendChild(heart);
+
+    /* REMOVE */
 
     setTimeout(()=>{
 
