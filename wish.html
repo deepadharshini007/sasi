@@ -222,7 +222,7 @@ body::before{
     filter:
     drop-shadow(0 0 35px rgba(255,220,170,0.2));
 
-    transition:0.5s;
+    transition:1s;
 }
 
 /* FLOAT */
@@ -350,65 +350,6 @@ body::before{
     transform:scale(1.08);
 }
 
-/* HEARTS */
-
-.heart{
-
-    position:fixed;
-
-    bottom:-40px;
-
-    color:#d6a56f;
-
-    pointer-events:none;
-
-    z-index:999;
-
-    opacity:0;
-
-    animation:heartBubble linear forwards;
-
-    filter:
-    drop-shadow(0 0 10px rgba(255,220,170,0.4));
-}
-
-/* FLOATING EFFECT */
-
-@keyframes heartBubble{
-
-    0%{
-
-        transform:
-        translateY(0)
-        translateX(0)
-        scale(0.6);
-
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    50%{
-
-        transform:
-        translateY(-45vh)
-        translateX(20px)
-        scale(1);
-    }
-
-    100%{
-
-        transform:
-        translateY(-110vh)
-        translateX(-20px)
-        scale(1.4);
-
-        opacity:0;
-    }
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
@@ -434,12 +375,7 @@ body::before{
 <!-- GLOW -->
 <div class="glow"></div>
 
-<!-- PRELOAD SECOND CAKE -->
-
-<img src="cake2.png" style="display:none;">
-
 <!-- STARS -->
-
 <script>
 
 for(let i=0;i<100;i++){
@@ -461,7 +397,6 @@ for(let i=0;i<100;i++){
 </script>
 
 <!-- DUST -->
-
 <script>
 
 for(let i=0;i<60;i++){
@@ -530,7 +465,7 @@ for(let i=0;i<60;i++){
     id="nextBtn"
     onclick="nextPage()">
 
-        Open Your surprise
+        Open Your surprise 
 
     </button>
 
@@ -542,7 +477,7 @@ for(let i=0;i<60;i++){
 
 function blowCandles(){
 
-    /* CHANGE CAKE INSTANTLY */
+    /* CHANGE CAKE */
 
     document.getElementById("cakeImg")
     .src = "cake2.png";
@@ -581,8 +516,71 @@ function nextPage(){
 }
 
 </script>
+<!-- HEART BUBBLES STYLE -->
 
-<!-- HEARTS SCRIPT -->
+<style>
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    color:#d6a56f;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    opacity:0;
+
+    animation:heartBubble linear forwards;
+
+    filter:
+    drop-shadow(0 0 10px rgba(255,220,170,0.4));
+}
+
+/* FLOATING EFFECT */
+
+@keyframes heartBubble{
+
+    0%{
+
+        transform:
+        translateY(0)
+        translateX(0)
+        scale(0.6);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    50%{
+
+        transform:
+        translateY(-45vh)
+        translateX(20px)
+        scale(1);
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        translateX(-20px)
+        scale(1.4);
+
+        opacity:0;
+    }
+}
+
+</style>
+
+
+<!-- HEART BUBBLES SCRIPT -->
 
 <script>
 
