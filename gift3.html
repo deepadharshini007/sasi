@@ -219,11 +219,12 @@ body{
     position:absolute;
 
     top:50%;
-    left:50%;
+    left:0;
 
-    transform:translate(-50%,-50%);
+    transform:translateY(-50%);
 
-    width:100%;
+    width:max-content;
+
     height:420px;
 
     display:flex;
@@ -231,19 +232,25 @@ body{
 
     gap:50px;
 
-    padding:0 100px;
+    padding:0 50px;
 
-    animation:slideFilm 30s linear infinite;
+    animation:slideFilm 45s linear infinite;
 }
+
+/* SMOOTH CONTINUOUS SLIDE */
 
 @keyframes slideFilm{
 
     from{
-        transform:translate(-10%,-50%);
+        transform:
+        translateX(0)
+        translateY(-50%);
     }
 
     to{
-        transform:translate(-65%,-50%);
+        transform:
+        translateX(-50%)
+        translateY(-50%);
     }
 }
 
@@ -261,6 +268,8 @@ body{
     position:relative;
 
     overflow:hidden;
+
+    flex-shrink:0;
 
     box-shadow:
     0 0 25px rgba(0,0,0,0.7);
@@ -589,27 +598,22 @@ body{
         font-size:2.2rem;
     }
 
-    /* FILM STRIP */
-
     .film-strip{
 
         gap:18px;
 
         padding:0 20px;
 
-        height:300px;
+        height:260px;
 
-        /* MOBILE SPEED */
-        animation:slideFilmMobile 18s linear infinite;
+        animation:slideFilm 28s linear infinite;
     }
-
-    /* MORE PHOTOS VISIBLE */
 
     .frame{
 
-        min-width:150px;
+        min-width:170px;
 
-        height:220px;
+        height:230px;
     }
 
     .paper{
@@ -639,18 +643,6 @@ body{
     }
 }
 
-/* MOBILE FILM SPEED */
-
-@keyframes slideFilmMobile{
-
-    from{
-        transform:translate(-5%,-50%);
-    }
-
-    to{
-        transform:translate(-78%,-50%);
-    }
-}
 </style>
 </head>
 
@@ -679,6 +671,28 @@ START THE FILM
 <!-- FILM STRIP -->
 
 <div class="film-strip">
+
+<div class="frame">
+<img src="photo1.jpeg">
+</div>
+
+<div class="frame">
+<img src="photo2.jpeg">
+</div>
+
+<div class="frame">
+<img src="photo3.jpeg">
+</div>
+
+<div class="frame">
+<img src="photo4.jpeg">
+</div>
+
+<div class="frame">
+<img src="photo5.jpeg">
+</div>
+
+<!-- DUPLICATE FOR SMOOTH LOOP -->
 
 <div class="frame">
 <img src="photo1.jpeg">
